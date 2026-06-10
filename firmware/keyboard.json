@@ -1,0 +1,58 @@
+{
+    "manufacturer": "Kavin",
+    "keyboard_name": "Focus Totem",
+    "maintainer": "kavin",
+    "url": "https://github.com/kvin-21/focus-totem-pcb",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "usb": {
+        "vid": "0xFEED",
+        "pid": "0x0F70",
+        "device_version": "0.1.0"
+    },
+    "features": {
+        "bootmagic": true,
+        "extrakey": true,
+        "console": false,
+        "command": false,
+        "nkro": false,
+        "mousekey": false,
+        "encoder": true,
+        "oled": true,
+        "rgblight": true
+    },
+    "matrix_pins": {
+        "direct": [
+            ["GP26", "GP27", "GP28", "GP29"]
+        ]
+    },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "GP0", "pin_b": "GP1" }
+        ]
+    },
+    "ws2812": {
+        "pin": "GP3",
+        "driver": "vendor"
+    },
+    "rgblight": {
+        "led_count": 2,
+        "hue_steps": 8,
+        "saturation_steps": 8,
+        "brightness_steps": 8,
+        "sleep": true,
+        "animations": {
+            "breathing": true
+        }
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                { "matrix": [0, 0], "x": 0, "y": 0 },
+                { "matrix": [0, 1], "x": 1, "y": 0 },
+                { "matrix": [0, 2], "x": 2, "y": 0 },
+                { "matrix": [0, 3], "x": 3.5, "y": 0 }
+            ]
+        }
+    }
+}

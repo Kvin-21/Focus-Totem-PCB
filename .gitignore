@@ -1,0 +1,21 @@
+# KiCad backups and autosaves
+*-backups/
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.kicad_prl
+_autosave-*
+fp-info-cache
+
+# KiCad generated output
+gerbers/
+*.net
+
+# QMK build artefacts
+*.uf2
+*.bin
+*.hex
+*.elf
+
+# OS bits
+.DS_Store
+Thumbs.db
