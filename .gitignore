@@ -8,7 +8,7 @@ fp-info-cache
 .history/
 *.rpt
 _test.*
-
+*.scad
 # local build helpers
 _gen_*.py
 _route.py
