@@ -6,3 +6,6 @@
 #define I2C1_SCL_PIN GP7
 
 #define OLED_DISPLAY_128X32
+
+/* the timer handles its own idle blanking, so leave QMK's auto-off out of it */
+#define OLED_TIMEOUT 0

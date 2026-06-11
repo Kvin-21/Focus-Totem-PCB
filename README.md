@@ -1,6 +1,6 @@
 # Focus Totem
 
-A desk totem that runs a Pomodoro/study timer. Twist the encoder to dial in the minutes, press to start, and the two side LEDs breathe along with the session —
+A desk totem that runs a Pomodoro/study timer. Twist the encoder to dial in the minutes, press to start, and the two side LEDs breathe along with the session -
 amber while setting up, green while the clock is running, red for the last minute, and then a flash when done. The OLED shows the live countdown and where you are (FOCUS / BREAK / DONE).
 
 It's built around a Seeed XIAO RP2040 and runs QMK.
@@ -42,18 +42,19 @@ It's built around a Seeed XIAO RP2040 and runs QMK.
 | D6   | GP0    | Encoder A                        |
 | D7   | GP1    | Encoder B                        |
 | D10  | GP3    | SK6812 data in                   |
-| 5V   | —      | LED V+, C2                       |
-| 3V3  | —      | OLED V+, I²C pull-ups, C1        |
-| GND  | —      | common ground                    |
+| 5V   | -      | LED V+, C2                       |
+| 3V3  | -      | OLED V+, I²C pull-ups, C1        |
+| GND  | -      | common ground                    |
 
 ## Layout
 
 ```
-hardware/    KiCad project — schematic, routed board, project + libraries
+hardware/    KiCad project - schematic, routed board, project + libraries
 firmware/    QMK keyboard folder (keyboard.json, config.h, rules.mk, keymaps/)
+case/        OpenSCAD source + printable STLs (plate + bottom)
 ```
 
-The board is a 70 × 72 mm two-layer design with a ground pour on both sides and M3 mounting holes in the corners. The XIAO sits on the bottom edge so its USB port lines up with the case cut-out.
+The board is an 84 × 72 mm two-layer design with a ground pour on both sides and M3 mounting holes in the corners. The XIAO sits on the bottom edge so its USB port lines up with the case cut-out.
 
 ## Firmware
 
@@ -65,4 +66,8 @@ cp -r focus-totem-pcb/firmware keyboards/focus_totem
 qmk compile -kb focus_totem -km default
 ```
 
-To flash later: plug the XIAO in, double-tap its reset/boot so it mounts as a USB drive, and copy the `.uf2`. It'll reboot into the firmware on its own.
+To flash: plug the XIAO in, double-tap its reset/boot so it mounts as a USB drive, and copy the `.uf2` across. It reboots into the firmware on its own.
+
+## Case
+
+A two-part sandwich: a 1.5 mm switch plate on top (the switches clip in and the encoder bush and OLED poke through), the PCB underneath on 4 mm standoffs, and a shallow tray for the bottom. Four M3 screws go up from underneath into bosses on the plate. The XIAO's USB port lines up with a slot in the back wall. Pockets are cut with 0.4 mm of clearance per side.
