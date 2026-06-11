@@ -71,3 +71,9 @@ To flash: plug the XIAO in, double-tap its reset/boot so it mounts as a USB driv
 ## Case
 
 A two-part sandwich: a 1.5 mm switch plate on top (the switches clip in and the encoder bush and OLED poke through), the PCB underneath on 4 mm standoffs, and a shallow tray for the bottom. Four M3 screws go up from underneath into bosses on the plate. The XIAO's USB port lines up with a slot in the back wall. Pockets are cut with 0.4 mm of clearance per side.
+<img width="1183" height="847" alt="image" src="https://github.com/user-attachments/assets/4bdeee5b-a23e-437d-a7ef-4f5c1c961730" />
+<img width="718" height="454" alt="image" src="https://github.com/user-attachments/assets/f570b791-8304-41ac-9cef-814ca948fb0a" />
+<img width="1204" height="862" alt="image" src="https://github.com/user-attachments/assets/485b06d8-aa47-4a6e-bbf0-2284d38dd044" />
+<img width="1183" height="847" alt="image" src="https://github.com/user-attachments/assets/7e97c4db-666f-4c82-ac52-9d0c11b3dd7a" />
+
+
