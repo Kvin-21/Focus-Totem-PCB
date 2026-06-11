@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "ft")(type "KiCad")(uri "${KIPRJMOD}/ft.kicad_sym")(options "")(descr "Focus Totem parts"))
+)

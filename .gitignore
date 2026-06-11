@@ -5,6 +5,13 @@
 *.kicad_prl
 _autosave-*
 fp-info-cache
+.history/
+*.rpt
+_test.*
+
+# local build helpers
+_gen_*.py
+_route.py
 
 # KiCad generated output
 gerbers/

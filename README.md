@@ -49,9 +49,11 @@ It's built around a Seeed XIAO RP2040 and runs QMK.
 ## Layout
 
 ```
-hardware/    KiCad 7 project — schematic, board, project file
+hardware/    KiCad project — schematic, routed board, project + libraries
 firmware/    QMK keyboard folder (keyboard.json, config.h, rules.mk, keymaps/)
 ```
+
+The board is a 70 × 72 mm two-layer design with a ground pour on both sides and M3 mounting holes in the corners. The XIAO sits on the bottom edge so its USB port lines up with the case cut-out.
 
 ## Firmware
 
