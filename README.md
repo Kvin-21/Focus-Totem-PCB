@@ -5,7 +5,7 @@ amber while setting up, green while the clock is running, red for the last minut
 
 It's a 4-input hackpad built around a through-hole Seeed XIAO RP2040 and runs QMK, so it doubles as a tiny macropad.
 
-![Assembled case](images/case.png)
+![Focus Totem](assets/hero.png)
 
 ## Controls
 
@@ -19,7 +19,7 @@ It's a 4-input hackpad built around a through-hole Seeed XIAO RP2040 and runs QM
 
 ## Schematic
 
-![Schematic](images/schematic.svg)
+![Schematic](assets/schematic.svg)
 
 ## PCB
 
@@ -27,13 +27,15 @@ Two-layer, 84 × 72 mm, ground pour both sides, M3 mounting holes in the corners
 
 | Top | Bottom |
 |-----|--------|
-| ![PCB top](images/pcb-top.png) | ![PCB bottom](images/pcb-bottom.png) |
+| ![PCB top](assets/pcb-top.png) | ![PCB bottom](assets/pcb-bottom.png) |
 
 ## Case
 
-A 3D-printed sandwich: a switch **plate** on top (the switches clip in, the encoder bush and OLED poke through, the side LEDs show through two little windows), the PCB in the middle on 4 mm standoffs, and a **bottom tray** that the XIAO tucks into with a USB slot in the back wall. Four M3 screws come up from underneath into bosses on the plate. Every pocket has 0.4 mm of clearance per side for printing.
+A 3D-printed sandwich: a switch **plate** on top (the switches clip in, the encoder bush and OLED poke through, the side LEDs show through two little windows), the PCB in the middle, and a **bottom tray** that the XIAO tucks into with a USB slot in the back wall. Four M3 screws drop in from the top, through the plate and PCB, into tapped standoffs in the tray. Every pocket has 0.4 mm of clearance per side, and "FOCUS TOTEM" is engraved into the plate.
 
-![Case](images/case.png)
+Both parts print flat with **no supports** — the plate face-up, the tray floor-down. The USB slot has a 45° self-supporting roof so nothing bridges.
+
+![Case](assets/case.png)
 
 ## Bill of materials
 
@@ -48,7 +50,7 @@ A 3D-printed sandwich: a switch **plate** on top (the switches clip in, the enco
 | R3       | 470 Ω, 0805                            | series on the LED data line  | 1   |
 | C1       | 100 nF, 0805                           | OLED decoupling              | 1   |
 | C2       | 10 µF, 0805                            | LED bulk                     | 1   |
-| H1–H4    | M3 × 12 screw                          | sandwich the stack           | 4   |
+| H1–H4    | M3 × 14 screw                          | sandwich the stack           | 4   |
 
 
 ## Wiring / pinout
@@ -73,11 +75,11 @@ Each key and the encoder switch pull their pin to ground. The encoder common goe
 ## Repository layout
 
 ```
-CAD/         case design — focus-totem.scad + the assembled model (.3mf)
+CAD/         the assembled model — focus-totem.3mf (whole macropad, one file)
 PCB/         KiCad project — schematic, routed board, libraries
 Firmware/    QMK keyboard (keyboard.json, config.h, rules.mk, keymaps/)
-production/  manufacturing files — gerbers.zip, plate + bottom STLs, firmware.uf2
-images/      the screenshots above
+production/  gerbers.zip, plate + bottom STLs, firmware.uf2, case source (.scad)
+assets/      the screenshots above
 ```
 
 ## Firmware — build & flash
@@ -94,11 +96,13 @@ To flash: plug the XIAO in, double-tap its reset/boot so it mounts as a USB driv
 
 ## Case — regenerating the model
 
-The case is parametric OpenSCAD, driven off the board outline and the KiCad component positions:
+The case is parametric OpenSCAD ([`production/focus-totem.scad`](production/focus-totem.scad)), driven off the board outline and the KiCad component positions:
 
 ```sh
-cd CAD
-openscad -D 'part="plate"'    -o ../production/focus-totem-plate.stl  focus-totem.scad
-openscad -D 'part="bottom"'   -o ../production/focus-totem-bottom.stl focus-totem.scad
-openscad -D 'part="assembly"' -o focus-totem-assembly.3mf            focus-totem.scad
+cd production
+openscad -D 'part="plate"'    -o focus-totem-plate.stl  focus-totem.scad
+openscad -D 'part="bottom"'   -o focus-totem-bottom.stl focus-totem.scad
+openscad -D 'part="assembly"' -o ../CAD/focus-totem.3mf focus-totem.scad
 ```
+
+Print the plate and bottom flat, no supports; PLA or PETG at 0.2 mm is fine.
