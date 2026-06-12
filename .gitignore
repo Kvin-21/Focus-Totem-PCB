@@ -6,22 +6,15 @@
 _autosave-*
 fp-info-cache
 .history/
+
+# scratch + local build helpers
 *.rpt
 _test.*
-*.scad
-# local build helpers
+_bot.png
+_v.png
+_clean.png
 _gen_*.py
 _route.py
-
-# KiCad generated output
-gerbers/
-*.net
-
-# QMK build artefacts
-*.uf2
-*.bin
-*.hex
-*.elf
 
 # OS bits
 .DS_Store
